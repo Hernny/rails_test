@@ -1,7 +1,21 @@
-<% if current_user %>
-    <!-- current_user will return true if a user is logged in -->
-    <%= "Logged in as #{current_user.email}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
-<% else %>
-    <!-- not logged in -->
-    <%= link_to 'Home', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up', new_user_path %>
-<% end %>
+<ul id="user-dropdown" class="dropdown-content">
+    <% if current_user %>
+        <!-- current_user will return true if a user is logged in -->
+        <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        <li class="divider"></li>
+        <li><a href="#!"><%= "#{current_user.email}" %></a></li>
+    <% else %>
+        <!-- not logged in -->
+        <li><%= link_to 'Log In', login_path %></li>
+        <li><%= link_to 'Sign Up', new_user_path %></li>
+    <% end %>
+</ul>
+<nav>
+<div class="nav-wrapper">
+    <a href="/" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="#!" data-target="user-dropdown"><%= "#{current_user.email}" %><i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+</div>
+</nav>

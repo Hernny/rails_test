@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_request)
         if @user.save
+            session[:user_id] = @user.id.to_s
             flash[:notice] = "Account created successfully!"
             redirect_to root_path
         else

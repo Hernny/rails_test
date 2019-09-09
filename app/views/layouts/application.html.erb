@@ -8,14 +8,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <%# ----- add these lines here: ----- %>
     <% if notice %>
-      <%= notice %>
+    <%= javascript_tag "M.toast({html: '#{notice}', classes: 'rounded'})" %>
     <% end %>
     <% if alert %>
-      <%= alert %>
+      <%= javascript_tag "M.toast({html: '#{alert}', classes: 'rounded'})" %>
     <% end %>
-	<%# ----- end of added lines ----- %>
     <%= yield %>
   </body>
 </html>

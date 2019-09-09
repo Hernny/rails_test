@@ -3,11 +3,14 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
-require("turbolinks").start()
+require("materialize-css/dist/js/materialize")
 require("@rails/activestorage").start()
+require("@rails/ujs").start()
+require("jquery")
+require("turbolinks").start()
 require("channels")
-import 'materialize-css/dist/js/materialize'
+
+require("packs/navbar/navbar")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

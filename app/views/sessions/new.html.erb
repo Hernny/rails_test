@@ -14,8 +14,12 @@
         <%= f.password_field :password %>
       </div>
       <div>
-        <%= f.submit "Log In" %>
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+          LOGIN<i class="material-icons right">send</i>
+        <% end %>
       </div>
     <% end %>
+    <br>
+    <%= link_to '<button type="button" class="waves-effect waves-light btn">SIGN UP<i class="material-icons right">add_circle</i></button>'.html_safe, new_user_path %>
   </div>
 </div>
