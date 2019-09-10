@@ -1,8 +1,8 @@
 <div class="row container">
-  <div class="col s6 offset-s3">
+  <div class="col s4 offset-s4">
     <div class="center">
         <i class="large material-icons">security</i>
-        <h1 class="center-align">Login</h1>
+        <h1 class="center-align">Log In</h1>
     </div>
     <%= form_for :login do |f| %>
       <div>
@@ -15,11 +15,10 @@
       </div>
       <div>
         <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
-          LOGIN<i class="material-icons right">send</i>
+          LOG IN<i class="material-icons right">send</i>
         <% end %>
+        <%= link_to '<button type="button" class="right waves-effect waves-light btn">SIGN UP<i class="material-icons right">add_circle</i></button>'.html_safe, new_user_path %>
       </div>
     <% end %>
-    <br>
-    <%= link_to '<button type="button" class="waves-effect waves-light btn">SIGN UP<i class="material-icons right">add_circle</i></button>'.html_safe, new_user_path %>
   </div>
 </div>
